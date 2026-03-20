@@ -16,8 +16,8 @@ namespace TransformableTools
             GUILayout.Space(10);
             GUILayout.Label("Set on Floor", EditorStyles.boldLabel);
 
-            EditorGUILayout.LabelField("Raycast Mask:", GUILayout.Width(80));
-            raycastMask = EditorGUILayout.LayerField(raycastMask);
+            //EditorGUILayout.LabelField("Raycast Mask:", GUILayout.Width(80));
+            //raycastMask = EditorGUILayout.LayerField(raycastMask);
 
             alongByNormal = EditorGUILayout.Toggle(new GUIContent("Along By Normal"), alongByNormal);
 
@@ -35,7 +35,7 @@ namespace TransformableTools
 
                 RaycastHit raycastHit;
 
-                if (Physics.Raycast(Selection.gameObjects[i].transform.position, Vector3.down, out raycastHit, 10000f, raycastMask))
+                if (Physics.Raycast(Selection.gameObjects[i].transform.position, Vector3.down, out raycastHit, 10000f))
                 {
                     Selection.gameObjects[i].transform.position = raycastHit.point;
 
